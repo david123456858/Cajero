@@ -5,4 +5,12 @@ import { Component } from '@angular/core';
   templateUrl: './homeLogin.component.html',
   styleUrls: ['./homeLogin.component.css'],
 })
-export class HomeLoginComponent { }
+export class HomeLoginComponent {
+  homepage: boolean = true;
+  loginpage: boolean = false;
+
+  accesslogin(){
+    this.homepage = false;
+    this.loginpage = true;
+  }
+ }
