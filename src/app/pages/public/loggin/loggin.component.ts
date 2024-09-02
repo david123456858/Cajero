@@ -14,7 +14,8 @@ export class LogginComponent {
 
   constructor(private service: ServicesUser) {}
   validateLenghtId(value: string): boolean {
-    return value.length === 10;
+    console.log(value)
+    return value.length > 9 && value.length < 11;
   }
 
   validateLenght(value: string): boolean {
@@ -33,8 +34,14 @@ export class LogginComponent {
       alert('La contraseña debe ser al menos 4 a 6 digitos');
       return;
     }
+    console.log(this.user);
+    
+    
     if (type === 'nequi') {
       this.user.type = 'NEQUI';
-    } else if (type === 'BANCOLOMBIA') this.service.login(this.user);
+    } else if (type === 'bancolombia') {
+      this.user.type = 'BANCOLOMBIA'
+    }
+    this.service.login(this.user);
   }
 }

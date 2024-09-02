@@ -1,7 +1,7 @@
 <body class="flex flex-col justify-center items-center h-[90vh] p-2">
   <div class="flex flex-col justify-center items-center" *ngIf="login">
     <img
-      class="w-[31.25rem] h-[20.75rem] mb-16"
+      class="mb-16"
       src="../../../../assets/WhatsApp Image 2024-08-28 at 6.16.51 PM.png"
       alt="ImagenDeInicio"
     />
@@ -26,12 +26,12 @@
 
     <div class="radio-group mt-10">
       <label class="custom-radio">
-        <input type="radio" name="payment" value="nequi" checked />
+        <input type="radio" name="payment" value="nequi" [(ngModel)]="user.type" checked />
         <span class="radio-button"></span>
         Nequi
       </label>
       <label class="custom-radio">
-        <input type="radio" name="payment" value="bancolombia"  />
+        <input type="radio" name="payment" value="bancolombia" [(ngModel)]="user.type"  />
         <span class="radio-button"></span>
         Bancolombia
       </label>

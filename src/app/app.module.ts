@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { HttpClientModule } from '@angular/common/http'; // Importar aquí
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@Angular/forms';
@@ -20,7 +20,8 @@ import { OptionspageComponent } from './pages/private/optionspage/optionspage.co
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule, // Añadir aquí
   ],
   providers: [],
   bootstrap: [AppComponent]
