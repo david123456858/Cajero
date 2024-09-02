@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./mainpage.component.css']
 })
 export class MainpageComponent {
+  Option: boolean = false;
 
+  Options(value: boolean){
+    this.Option = value;
+  }
 }

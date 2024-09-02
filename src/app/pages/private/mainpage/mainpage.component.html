@@ -21,6 +21,7 @@
           src="../../../../assets/retiro-de-efectivo.png"
           alt="paymentsIcon"
           class="ml-[3.125rem] w-[3.75rem]"
+          (click)="Options(true)"
         />Sacar plata
       </button>
 
@@ -35,4 +36,9 @@
       </button>
     </div>
   </div>
+
+  <app-optionspage
+  class="absolute inset-0 bg-[#582b94] z-10"
+  *ngIf="Option"
+  (changeState)="Options($event)"/>
 </body>

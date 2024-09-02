@@ -1,5 +1,5 @@
 <body class="flex flex-col justify-center items-center h-[90vh] p-2">
-  <div class="flex flex-col justify-center items-center">
+  <div class="flex flex-col justify-center items-center" *ngIf="login">
     <img
       class="w-[31.25rem] h-[20.75rem] mb-16"
       src="../../../../assets/WhatsApp Image 2024-08-28 at 6.16.51 PM.png"
@@ -24,21 +24,24 @@
 
     <div class="radio-group mt-10">
       <label class="custom-radio">
-        <input type="radio" name="payment" value="nequi" checked>
+        <input type="radio" name="payment" value="nequi" checked />
         <span class="radio-button"></span>
         Nequi
       </label>
       <label class="custom-radio">
-        <input type="radio" name="payment" value="bancolombia">
+        <input type="radio" name="payment" value="bancolombia" />
         <span class="radio-button"></span>
         Bancolombia
       </label>
     </div>
 
     <button
+      (click)="log()"
       class="bg-[#581b94] text-white font-bold text-lg p-3 mt-12 w-[18.75rem] border rounded-3xl"
     >
       Acceder
     </button>
   </div>
+
+  <app-mainpage *ngIf="main"/>
 </body>

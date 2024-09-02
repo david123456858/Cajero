@@ -1,0 +1,20 @@
+.atm-interface {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 300px;
+  text-align: center;
+  border-top-right-radius: 2.5rem;
+  border-top-left-radius: 2.5rem;
+  border-bottom-right-radius: 2.55rem;
+  border-bottom-left-radius: 2.5rem;
+}
+
+.linea{
+  border: 2px solid #a6a6a6;
+  width: 100%;
+  margin-top: 30px;
+}

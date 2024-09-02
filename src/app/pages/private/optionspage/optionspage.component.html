@@ -1,0 +1,21 @@
+<body class="flex justify-center items-center gap-9 flex-col h-[90vh]">
+  <h2 class="text-xl text-[#fff]">¿Cuánta plata desea sacar?</h2>
+  <div class="atm-interface">
+    <div class="linea"></div>
+    <button class="text-[#5e2a92]">20.000</button>
+    <button class="text-[#5e2a92]">50.000</button>
+    <button class="text-[#5e2a92]">100.000</button>
+    <button class="text-[#5e2a92]">200.000</button>
+    <input
+      type="number"
+      placeholder="Ingrese un valor como 710.000"
+      class="placeholder:text-[#5e2a92] mt-10 border-b border-[#a6a6a6] mb-8"
+    />
+  </div>
+  <button
+    class="text-center font-semibold text-[#581b94] rounded-[50px] h-[3.125rem] w-[8.125rem] bg-[#ffffff]"
+    (click)="close()"
+  >
+    Aceptar
+  </button>
+</body>

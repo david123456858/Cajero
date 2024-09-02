@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./loggin.component.css']
 })
 export class LogginComponent {
+  login: boolean = true;
+  main: boolean = false;
 
+  log(){
+    this.login = false;
+    this.main = true;
+  }
 }
