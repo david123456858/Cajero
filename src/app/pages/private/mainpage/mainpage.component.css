@@ -1,0 +1,53 @@
+.linea{
+  border-bottom: 0.188rem solid #886fb6;
+  width: 21.875rem;
+  border-radius: 10;
+}
+
+.card {
+  position: relative;
+  width: 15.625rem;
+  height: 9.375rem;
+  border-radius: 15px;
+  background-color: #b980f0;
+  color: white;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: rotate(-10deg);
+  margin-bottom: 6.25rem;
+}
+
+.card-overlay {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  width: 250px;
+  height: 150px;
+  border-radius: 15px;
+  background-color: #581b94;
+  z-index: -1;
+  transform: rotate(10deg);
+}
+
+.card-content {
+  position: relative;
+  z-index: 1;
+}
+
+.card-logo {
+  font-weight: bold;
+  font-size: 14px;
+  margin-top: -20px;
+  margin-bottom: 16px;
+}
+
+.card-balance {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.card-number {
+  font-size: 14px;
+  letter-spacing: 2px;
+}
