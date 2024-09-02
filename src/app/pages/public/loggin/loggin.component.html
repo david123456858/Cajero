@@ -7,17 +7,19 @@
     />
 
     <input
+      [(ngModel)]="user.phoneNumber"
       id="user"
       name="user"
-      type="text"
+      type="number"
       placeholder="Telefono"
       class="border-b-2 border-gray-400 placeholder:text-[#000] text-xl p-2"
     />
 
     <input
+     [(ngModel)]="user.passwords"
       id="password"
       name="password"
-      type="tel"
+      type="number"
       placeholder="Clave"
       class="border-b-2 border-gray-400 placeholder:text-[#000] text-xl p-2 mt-5"
     />
@@ -29,7 +31,7 @@
         Nequi
       </label>
       <label class="custom-radio">
-        <input type="radio" name="payment" value="bancolombia" />
+        <input type="radio" name="payment" value="bancolombia"  />
         <span class="radio-button"></span>
         Bancolombia
       </label>
