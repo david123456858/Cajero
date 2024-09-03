@@ -1,5 +1,5 @@
 import { ServicesUser } from './../../../service/app.loggin';
-import { IUserLoggin } from './../../../interface/user.interface';
+import { IUserLoggin, User } from './../../../interface/user.interface';
 import { Component } from '@angular/core';
 
 @Component({
@@ -10,12 +10,14 @@ import { Component } from '@angular/core';
 export class LogginComponent {
   login: boolean = true;
   main: boolean = false;
+
   user: IUserLoggin = new IUserLoggin();
+  userLoggin: User = new User();
 
   constructor(private service: ServicesUser) {}
+
   validateLenghtId(value: string): boolean {
-    console.log(value)
-    return value.length > 9 && value.length < 11;
+    return value.length !== 10;
   }
 
   validateLenght(value: string): boolean {
@@ -23,25 +25,52 @@ export class LogginComponent {
   }
 
   log() {
-    this.login = false;
-    this.main = true;
     const { phoneNumber, passwords, type } = this.user;
-    if (!this.validateLenghtId(phoneNumber)) {
+
+    let numberString = phoneNumber.toString();
+    let passWordString = passwords.toString();
+
+    if (this.validateLenghtId(numberString)) {
       alert('El numero debe ser almenos 10 numeros');
       return;
     }
-    if (!this.validateLenght(passwords)) {
+
+    if (!this.validateLenght(passWordString)) {
+      console.log(passWordString.length);
+
       alert('La contraseña debe ser al menos 4 a 6 digitos');
       return;
     }
     console.log(this.user);
-    
-    
+
     if (type === 'nequi') {
       this.user.type = 'NEQUI';
     } else if (type === 'bancolombia') {
-      this.user.type = 'BANCOLOMBIA'
+      this.user.type = 'BANCOLOMBIA';
+    } else if (type.length === 0) {
+      alert('Debe elegir alguna cuenta');
+      return;
     }
-    this.service.login(this.user);
+
+    // Esto es para tranformar el usuario a lo que pide el back
+    this.userLoggin.phoneNumber = numberString;
+    this.userLoggin.passwords = passWordString;
+    this.userLoggin.type = this.user.type;
+
+    console.log('Esto mandamos', this.userLoggin);
+
+    this.service.login(this.userLoggin).subscribe(
+      (response) => {
+        console.log('Tqm bb', response);
+        this.login = false;
+        this.main = true;
+      },
+      (error) => {
+        console.error('Error en la solicitud', error);
+        return alert('la cuenta digata mal o no existe en el sistema')
+      }
+    );
+
+    
   }
 }
