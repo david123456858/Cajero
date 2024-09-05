@@ -1,35 +1,39 @@
 <body class="flex flex-col justify-center items-center h-[90vh] p-2">
   <div class="flex flex-col justify-center items-center" *ngIf="login">
     <img
-      class="w-[31.25rem] h-[20.75rem] mb-16"
+      class="mb-16"
       src="../../../../assets/WhatsApp Image 2024-08-28 at 6.16.51 PM.png"
       alt="ImagenDeInicio"
     />
 
     <input
+      [(ngModel)]="user.phoneNumber"
       id="user"
       name="user"
-      type="text"
+      type="number"
+      inputmode="numeric"
       placeholder="Telefono"
       class="border-b-2 border-gray-400 placeholder:text-[#000] text-xl p-2"
     />
 
     <input
+     [(ngModel)]="user.passwords"
       id="password"
       name="password"
-      type="tel"
+      type="number"
+      inputmode="numeric"
       placeholder="Clave"
       class="border-b-2 border-gray-400 placeholder:text-[#000] text-xl p-2 mt-5"
     />
 
     <div class="radio-group mt-10">
       <label class="custom-radio">
-        <input type="radio" name="payment" value="nequi" checked />
+        <input type="radio" name="payment" value="nequi" [(ngModel)]="user.type" checked />
         <span class="radio-button"></span>
         Nequi
       </label>
       <label class="custom-radio">
-        <input type="radio" name="payment" value="bancolombia" />
+        <input type="radio" name="payment" value="bancolombia" [(ngModel)]="user.type"  />
         <span class="radio-button"></span>
         Bancolombia
       </label>
