@@ -8,6 +8,7 @@ import { LogginComponent } from './pages/public/loggin/loggin.component';
 import {HomeLoginComponent} from './pages/public/homeLogin/homeLogin.component';
 import { MainpageComponent } from './pages/private/mainpage/mainpage.component';
 import { OptionspageComponent } from './pages/private/optionspage/optionspage.component'
+import { DecimalPipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,7 @@ import { OptionspageComponent } from './pages/private/optionspage/optionspage.co
     FormsModule,
     HttpClientModule, // Añadir aquí
   ],
-  providers: [],
+  providers: [DecimalPipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

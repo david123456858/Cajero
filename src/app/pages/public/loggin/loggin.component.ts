@@ -1,6 +1,8 @@
 import { ServicesUser } from './../../../service/app.loggin';
 import { IUserLoggin, User } from './../../../interface/user.interface';
 import { Component } from '@angular/core';
+import { setCurrentUser } from 'src/app/service/user.data';
+
 
 @Component({
   selector: 'app-loggin',
@@ -58,16 +60,16 @@ export class LogginComponent {
     this.userLoggin.type = this.user.type;
 
     console.log('Esto mandamos', this.userLoggin);
-
     this.service.login(this.userLoggin).subscribe(
       (response) => {
-        console.log('Tqm bb', response);
         this.login = false;
-        this.main = true;
+        this.main = true
+        setCurrentUser(response)
       },
       (error) => {
         console.error('Error en la solicitud', error);
-        return alert('la cuenta digata mal o no existe en el sistema')
+        
+        return alert('la cuenta digata mal o no existe en el sistema ' )
       }
     );
 
