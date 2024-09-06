@@ -56,3 +56,14 @@
     background-color: #4e1d85;
   }
   
+  .invoice-container {
+    position: fixed; /* O 'absolute', dependiendo del diseño */
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white; /* Asegúrate de que tenga un fondo visible */
+    padding: 20px;
+    border-radius: 8px;
+    z-index: 20; /* Mayor que el modal para que sea visible encima */
+  }
+  

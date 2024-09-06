@@ -1,0 +1,21 @@
+<div class="invoice-container">
+    <div class="invoice-header">
+      <h1 class="text-[#5e2a92]">Factura de Retiro</h1>
+      <p>Fecha: {{ currentDate }}</p>
+      <p>Número de Transacción: {{ transactionNumber }}</p>
+    </div>
+  
+    <div class="invoice-body">
+      <div class="invoice-details">
+        <p><strong>Tipo de Cuenta:</strong> {{ accountType }}</p>
+        <p><strong>Saldo Anterior:</strong> {{ previousBalance | currency }}</p>
+        <p><strong>Monto Retirado:</strong> {{ withdrawalAmount | currency }}</p>
+        <p><strong>Saldo Actual:</strong> {{ currentBalance | currency }}</p>
+      </div>
+    </div>
+  
+    <div class="invoice-footer">
+      <p>Gracias por utilizar nuestros servicios.</p>
+      <button class="btn-print" (click)="printInvoice()">Imprimir Factura</button>
+    </div>
+  </div>

@@ -1,4 +1,3 @@
-import { setCurrentUser } from 'src/app/service/user.data';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { getCurrentUser } from 'src/app/service/user.data';
 import { getKey } from 'src/app/service/key.dinamic';
@@ -16,6 +15,7 @@ export class CodeConfirmationModalComponent implements OnInit {
   generatedCode: string = ''; // Código generado dinámicamente
   accountType: string = '';  // Tipo de cuenta, puedes cambiar este valor dinámicamente
   user: any;
+  isInvoiceVisible = false;
 
   constructor() {
     this.startTimer();
@@ -36,23 +36,17 @@ export class CodeConfirmationModalComponent implements OnInit {
       if (this.remainingTime <= 0) {
         clearInterval(interval);
         alert('Transacción cancelada');
-        this.closeModal();  // Cierra el modal cuando el tiempo se acabe
       }
     }, 1000);  // Disminuye el tiempo cada segundo
   }
 
   verifyCode() {
     if (this.enteredCode === this.generatedCode) {
-      alert('Código confirmado correctamente');
-      this.closeModal();
+      this.isModalOpen = false;
+      this.isInvoiceVisible = true;
     } else {
       alert('Código incorrecto, intente de nuevo');
     }
-  }
-
-  // Método para cerrar el modal
-  closeModal() {
-    this.isModalOpen = false;
   }
 
   close() {

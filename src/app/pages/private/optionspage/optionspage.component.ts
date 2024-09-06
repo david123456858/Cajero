@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
+import { setCurrentMonto } from 'src/app/service/monto';
 
 @Component({
   selector: 'app-optionspage',
@@ -36,10 +37,14 @@ export class OptionspageComponent {
   openModal() {
     if (this.selectedAmount || this.customAmount) {
       if (0 == this.customAmount as number % 10000) {
+        console.log('digitos', this.customAmount)
+        setCurrentMonto(this.customAmount)
         this.isModalOpen = true;
       }else{
         alert('No es multiplo de 10')
       } 
+      console.log('Imprimi el valor 2',this.selectedAmount)
+      setCurrentMonto(this.selectedAmount)
     } else {
       alert('Por favor seleccione o ingrese una cantidad.');
       return

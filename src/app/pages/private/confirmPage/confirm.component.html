@@ -19,7 +19,8 @@
 
     <!-- Input para ingresar el código -->
     <input 
-      type="text" 
+      type="number"
+      inputmode="numeric" 
       placeholder="Ingrese su código" 
       class="input-code"
       [(ngModel)]="enteredCode"
@@ -27,5 +28,8 @@
 
     <!-- Botón de Confirmación -->
     <button class="confirm-button" (click)="verifyCode()">Confirmar</button>
+
+    
   </div>
 </div>
+<app-invoice-page *ngIf="isInvoiceVisible" class="z-100"/>
