@@ -9,6 +9,7 @@ import {HomeLoginComponent} from './pages/public/homeLogin/homeLogin.component';
 import { MainpageComponent } from './pages/private/mainpage/mainpage.component';
 import { OptionspageComponent } from './pages/private/optionspage/optionspage.component'
 import { DecimalPipe } from '@angular/common';
+import {CodeConfirmationModalComponent} from '../app/pages/private/confirmPage/confirm.component'
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { DecimalPipe } from '@angular/common';
     LogginComponent,
     HomeLoginComponent,
     MainpageComponent,
-    OptionspageComponent
+    OptionspageComponent,
+    CodeConfirmationModalComponent
   ],
   imports: [
     BrowserModule,

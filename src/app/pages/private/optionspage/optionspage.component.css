@@ -22,43 +22,42 @@ body {
 }
 
 .withdraw-option {
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  transition: all 0.3s;
   display: flex;
   align-items: center;
-  background: transparent;
-  border: none;
-  color: #5e2a92; /* Color del texto */
-  font-size: 1.2rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  position: relative;
-  padding-left: 40px; /* Espacio para el círculo */
-  text-align: left;
-  margin: 5px 0; /* Espacio entre botones */
-  font-family: 'Poppins', sans-serif;
+  justify-content: center;
 }
+
 
 .withdraw-option:hover .circle {
   background-color: #581b94; /* Color morado en hover */
 }
 
 .circle {
-  width: 20px; /* Tamaño del círculo */
+  width: 20px;
   height: 20px;
   border-radius: 50%;
-  border: 2px solid #ccc; /* Color gris por defecto */
+  border: 2px solid #ccc;
+  margin-right: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-right: 10px;
-  transition: all 0.3s ease;
-  position: absolute;
-  left: 0;
+  transition: all 0.3s;
 }
 
 .circle::before {
   content: '>'; /* Icono de flecha */
   color: transparent; /* No mostrar el icono por defecto */
   font-size: 12px;
+}
+.withdraw-option.active {
+  border: 2px solid #5e35b1; /* borde morado cuando está activo */
+  background-color: #e6e6fa; /* color de fondo cuando está activo */
+  color: #5e35b1; /* color del texto cuando está activo */
 }
 
 .withdraw-option.active .circle {
