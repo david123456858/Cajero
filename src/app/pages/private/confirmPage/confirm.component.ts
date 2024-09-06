@@ -10,12 +10,13 @@ import { getKey } from 'src/app/service/key.dinamic';
 export class CodeConfirmationModalComponent implements OnInit {
   @Output() changeState = new EventEmitter<boolean>();
   isModalOpen = true;  // Cambiar a `true` cuando quieras abrir el modal
-  remainingTime = 30;  // Tiempo inicial de 30 segundos
+  remainingTime = 20;  // Tiempo inicial de 30 segundos
   enteredCode: string = '';  // Código ingresado por el usuario
   generatedCode: string = ''; // Código generado dinámicamente
   accountType: string = '';  // Tipo de cuenta, puedes cambiar este valor dinámicamente
   user: any;
   isInvoiceVisible = false;
+  malas: number = 0
 
   constructor() {
     this.startTimer();
@@ -35,17 +36,24 @@ export class CodeConfirmationModalComponent implements OnInit {
       this.remainingTime--;
       if (this.remainingTime <= 0) {
         clearInterval(interval);
-        alert('Transacción cancelada');
+        alert('Transacción cancelada o finalizada');
+        window.location.reload()
       }
     }, 1000);  // Disminuye el tiempo cada segundo
   }
 
   verifyCode() {
+    
     const codeString = this.enteredCode.toString()
     if (codeString === this.generatedCode) {
       this.isModalOpen = false;
       this.isInvoiceVisible = true;
     } else {
+      if(this.malas === 3){
+        alert('Su sesion ha sido cerrada')
+        window.location.reload()
+      }
+      this.malas = this.malas + 1 
       alert('Código incorrecto, intente de nuevo');
     }
   }
