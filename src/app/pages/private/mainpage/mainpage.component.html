@@ -1,12 +1,21 @@
 <body class="flex justify-center items-center h-[90vh] p-2">
-  <div class="flex justify-center items-center flex-col">
+  <div 
+      *ngIf="showInfoBox" 
+      class="info-box bg-white p-3 rounded-md shadow-lg border-2 border-[#581b94] absolute top-0 left-0 animate-slide-in"
+      (click)="copyToClipboard()"
+      title="Haz clic para copiar">
+      <p class="text-[#581b94] font-bold">{{ dynamicCode }}</p>
+      <p *ngIf="copied" class="text-green-500">¡Clave copiada!</p> <!-- Muestra mensaje de copiado -->
+    </div>
+  <div class="flex justify-center items-center flex-col relative">
     <p class="text-[#581b94] text-[1.5rem] mt-5 mb-12 font-bold">Cuenta de Ahorros</p>
+    
     <div class="card">
       <div class="card-overlay"></div>
       <div class="card-content">
         <div class="card-logo">ATM</div>
-        <div class="card-balance">{{this.user.mesagge.saldo | number:'1.0-2' }}</div>
-        <div class="card-number">xxxx xxxx xxxx</div>
+        <div class="card-balance">${{ user.mesagge.saldo | number:'1.0-2' }}</div>
+        <div class="card-number">{{user.mesagge.numberPhone}}</div>
       </div>
     </div>
 
@@ -16,12 +25,12 @@
     <div class="flex gap-5 mt-5">
       <button
         class="bg-[#581b94] text-center text-lg text-white rounded-md w-[9.5rem] h-[7.25rem]"
+        (click)="Options(true)"
       >
         <img
           src="../../../../assets/retiro-de-efectivo.png"
           alt="paymentsIcon"
           class="ml-[3.125rem] w-[3.75rem]"
-          (click)="Options(true)"
         />Sacar plata
       </button>
 
@@ -38,7 +47,8 @@
   </div>
 
   <app-optionspage
-  class="absolute inset-0 bg-[#582b94] z-10"
-  *ngIf="Option"
-  (changeState)="Options($event)"/>
+    class="absolute inset-0 bg-[#582b94] z-10"
+    *ngIf="Option"
+    (changeState)="Options($event)"
+  />
 </body>

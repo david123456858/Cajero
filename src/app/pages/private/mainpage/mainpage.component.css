@@ -51,3 +51,21 @@
   font-size: 14px;
   letter-spacing: 2px;
 }
+
+.info-box {
+  width: 150px;  /* Ajusta el tamaño del cuadro si es necesario */
+  animation: slide-in 0.5s forwards; /* Duración de la animación */
+  z-index: 1000;  /* Asegura que el cuadro esté sobre la tarjeta */
+  cursor: pointer;  /* Cambia el cursor al pasar sobre el cuadro */
+}
+
+@keyframes slide-in {
+  0% {
+    transform: translate(-100%, -100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(10%, 10%);  /* Ajusta para la posición final deseada */
+    opacity: 1;
+  }
+}

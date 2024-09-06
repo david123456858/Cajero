@@ -1,20 +1,86 @@
+body {
+  background-color: #5e2a92; /* Fondo morado */
+}
+
 .atm-interface {
   display: flex;
   flex-direction: column;
-  gap: 40px;
-  background-color: #fff;
+  gap: 10px;
+  background-color: #fff; /* Fondo blanco del cuadro */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   padding: 20px;
   width: 300px;
   text-align: center;
-  border-top-right-radius: 2.5rem;
-  border-top-left-radius: 2.5rem;
-  border-bottom-right-radius: 2.55rem;
-  border-bottom-left-radius: 2.5rem;
+  border-radius: 2.5rem; /* Bordes redondeados */
+  margin-top: 20px;
 }
 
-.linea{
+.linea {
   border: 2px solid #a6a6a6;
   width: 100%;
-  margin-top: 30px;
+  margin: 20px 0; /* Margen superior e inferior */
+}
+
+.withdraw-option {
+  display: flex;
+  align-items: center;
+  background: transparent;
+  border: none;
+  color: #5e2a92; /* Color del texto */
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  padding-left: 40px; /* Espacio para el círculo */
+  text-align: left;
+  margin: 5px 0; /* Espacio entre botones */
+  font-family: 'Poppins', sans-serif;
+}
+
+.withdraw-option:hover .circle {
+  background-color: #581b94; /* Color morado en hover */
+}
+
+.circle {
+  width: 20px; /* Tamaño del círculo */
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #ccc; /* Color gris por defecto */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+  transition: all 0.3s ease;
+  position: absolute;
+  left: 0;
+}
+
+.circle::before {
+  content: '>'; /* Icono de flecha */
+  color: transparent; /* No mostrar el icono por defecto */
+  font-size: 12px;
+}
+
+.withdraw-option.active .circle {
+  border-color: #5e35b1; /* Color del borde cuando está activo */
+  background-color: #5e35b1; /* Círculo morado cuando está activo */
+}
+
+.withdraw-option.active .circle::before {
+  color: white; /* Mostrar el icono blanco cuando está activo */
+}
+
+.withdraw-option:not(.active) .circle::before {
+  color: #ccc; /* Color gris para el icono cuando no está activo */
+}
+
+input[type="number"] {
+  width: calc(100% - 40px); /* Ajuste de ancho */
+  margin: auto;
+  padding: 5px 10px;
+  font-size: 1rem;
+  color: #5e2a92; /* Color del texto */
+  border: none;
+  border-bottom: 1px solid #a6a6a6;
+  text-align: center;
 }
