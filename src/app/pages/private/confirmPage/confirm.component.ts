@@ -41,7 +41,8 @@ export class CodeConfirmationModalComponent implements OnInit {
   }
 
   verifyCode() {
-    if (this.enteredCode === this.generatedCode) {
+    const codeString = this.enteredCode.toString()
+    if (codeString === this.generatedCode) {
       this.isModalOpen = false;
       this.isInvoiceVisible = true;
     } else {
@@ -63,7 +64,6 @@ export class CodeConfirmationModalComponent implements OnInit {
       return code
     }
     code = getKey()
-    console.log(code);
     return code;  // Puedes cambiar esto para generar un código aleatorio
   }
 }

@@ -43,7 +43,6 @@ export class OptionspageComponent {
       }else{
         alert('No es multiplo de 10')
       } 
-      console.log('Imprimi el valor 2',this.selectedAmount)
       setCurrentMonto(this.selectedAmount)
     } else {
       alert('Por favor seleccione o ingrese una cantidad.');
