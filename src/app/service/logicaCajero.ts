@@ -2,7 +2,7 @@ const vectorBilletes: number[] = [10000, 20000, 50000, 100000];
 
 export const sacarVectorBillete = (valor:number)=>{
     let sumaBilletes:number[] = [0,0,0,0]
-
+    console.log(valor);
     let suma = 0
     for (let i = 0; i < vectorBilletes.length; i++) {
         

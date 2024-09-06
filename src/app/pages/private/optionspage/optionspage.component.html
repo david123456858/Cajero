@@ -43,7 +43,8 @@
       placeholder="Ingrese un valor"
       class="placeholder:text-[#5e2a92] mt-10 border-b border-[#a6a6a6] mb-8"
       [(ngModel)]="customAmount"
-      (ngModelChange)="resetSelection()"
+      value="customAmount"
+      (ngModelChange)="resetSelection(customAmount)"
     />
   </div>
 

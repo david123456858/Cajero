@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { UserBalance } from 'src/app/interface/userBalance.inteface';
 import { AppBalanceService } from 'src/app/service/app.balance.service';
+import { getBilletes } from 'src/app/service/billetes';
 import { sacarVectorBillete } from 'src/app/service/logicaCajero';
-import { getCurrentMonto } from 'src/app/service/monto';
+import { getCurrentMonto, getCurrentMontoSelect } from 'src/app/service/monto';
 import { getCurrentUser } from 'src/app/service/user.data';
 
 @Component({
@@ -19,9 +20,9 @@ export class InvoicePageComponent implements OnInit {
     this.user = getCurrentUser()
     this.accountType = this.user.mesagge.type
     this.previousBalance = this.user.mesagge.saldo
-    this.withdrawalAmount = getCurrentMonto()
+    this.withdrawalAmount = getCurrentMonto() ?? getCurrentMontoSelect()
     this.currentBalance= this.previousBalance - this.withdrawalAmount;
-    this.vectorBilletes = sacarVectorBillete(this.withdrawalAmount)
+    this.vectorBilletes = getBilletes()
   }
   constructor(private service:AppBalanceService){
 

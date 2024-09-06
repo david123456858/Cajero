@@ -49,11 +49,12 @@ export class CodeConfirmationModalComponent implements OnInit {
       this.isModalOpen = false;
       this.isInvoiceVisible = true;
     } else {
+      this.malas = this.malas + 1 
       if(this.malas === 3){
         alert('Su sesion ha sido cerrada')
         window.location.reload()
+        return
       }
-      this.malas = this.malas + 1 
       alert('Código incorrecto, intente de nuevo');
     }
   }
