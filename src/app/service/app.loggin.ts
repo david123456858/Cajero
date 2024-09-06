@@ -10,7 +10,7 @@ export class ServicesUser{
 
     loginUrl:string = 'https://lmnxjzrh-3004.use2.devtunnels.ms/api/v1/loggin'
     user:User = new User()
-
+ 
     constructor(private http:HttpClient){
     } 
 
