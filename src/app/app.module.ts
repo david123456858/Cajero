@@ -9,14 +9,18 @@ import {HomeLoginComponent} from './pages/public/homeLogin/homeLogin.component';
 import { MainpageComponent } from './pages/private/mainpage/mainpage.component';
 import { OptionspageComponent } from './pages/private/optionspage/optionspage.component'
 import { DecimalPipe } from '@angular/common';
-
+import {CodeConfirmationModalComponent} from '../app/pages/private/confirmPage/confirm.component';
+import { InvoicePageComponent } from './pages/private/invoice-page/invoice-page.component'
 @NgModule({
   declarations: [
     AppComponent,
     LogginComponent,
     HomeLoginComponent,
     MainpageComponent,
-    OptionspageComponent
+    OptionspageComponent,
+    CodeConfirmationModalComponent,
+    InvoicePageComponent,
+    
   ],
   imports: [
     BrowserModule,

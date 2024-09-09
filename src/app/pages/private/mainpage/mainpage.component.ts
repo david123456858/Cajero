@@ -43,7 +43,7 @@ export class MainpageComponent implements OnInit {
     setTimeout(() => {
       this.showInfoBox = false; // Oculta el cuadro después de 10 segundos
       this.generateDynamicCode()
-    }, 20000);
+    }, 30000);
   }
 
   copyToClipboard() {

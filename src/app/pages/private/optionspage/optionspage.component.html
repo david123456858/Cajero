@@ -1,39 +1,40 @@
 <body class="flex justify-center items-center gap-9 flex-col h-[90vh] bg-[#5e2a92]">
   <h2 class="text-xl text-[#fff]">¿Cuánta plata desea sacar?</h2>
-  
+
   <div class="atm-interface">
     <div class="linea mb-4"></div>
 
-    <!-- Botón 20.000 -->
-    <button 
-      class="withdraw-option" 
-      [ngClass]="{'active': isActive(20000)}" 
-      (click)="selectAmount(20000)">
+    <!-- Botones de cantidad -->
+    <button
+      class="withdraw-option"
+      [ngClass]="{'active': isActive(20000)}"
+      (click)="selectAmount(20000)"
+    >
       <span class="circle"></span> 20.000
     </button>
 
-    <!-- Botón 50.000 -->
-    <button 
-      class="withdraw-option" 
-      [ngClass]="{'active': isActive(50000)}" 
-      (click)="selectAmount(50000)">
+    <button
+      class="withdraw-option"
+      [ngClass]="{'active': isActive(50000)}"
+      (click)="selectAmount(50000)"
+    >
       <span class="circle"></span> 50.000
     </button>
 
-    <!-- Botón 100.000 -->
-    <button 
-      class="withdraw-option" 
-      [ngClass]="{'active': isActive(100000)}" 
-      (click)="selectAmount(100000)">
+    <button
+      class="withdraw-option"
+      [ngClass]="{'active': isActive(100000)}"
+      (click)="selectAmount(100000)"
+    >
       <span class="circle"></span> 100.000
     </button>
 
-    <!-- Botón 200.000 -->
-    <button 
-      class="withdraw-option" 
-      [ngClass]="{'active': isActive(600000)}" 
-      (click)="selectAmount(600000)">
-      <span class="circle"></span> 600.000
+    <button
+      class="withdraw-option"
+      [ngClass]="{'active': isActive(200000)}"
+      (click)="selectAmount(200000)"
+    >
+      <span class="circle"></span> 200.000
     </button>
 
     <!-- Input para ingresar un monto personalizado -->
@@ -41,14 +42,23 @@
       type="number"
       placeholder="Ingrese un valor"
       class="placeholder:text-[#5e2a92] mt-10 border-b border-[#a6a6a6] mb-8"
+      inputmode="numeric"
+      [(ngModel)]="customAmount"
+      value="customAmount"
+      (ngModelChange)="resetSelection(customAmount)"
     />
   </div>
 
   <!-- Botón de aceptar -->
   <button
     class="text-center font-semibold text-[#581b94] rounded-[50px] h-[3.125rem] w-[8.125rem] bg-[#ffffff]"
-    (click)="close()"
+    (click)="openModal()"
   >
     Aceptar
   </button>
+
+  <app-code-confirmation-modal 
+    class="absolute inset-0 bg-[#582b94] z-10"
+    *ngIf="isModalOpen"
+  ></app-code-confirmation-modal>
 </body>

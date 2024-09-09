@@ -26,6 +26,20 @@ export class LogginComponent {
     return value.length >= 4 && value.length <= 6;
   }
 
+  validateNumberInput(event: any) {
+    const input = event.target.value;
+
+    if (input.length > 11) {
+      event.target.value = input.slice(0, 10);
+    }
+  }
+  validatePassInput(event: any) {
+    const input = event.target.value;
+
+    if (input.length > 6) {
+      event.target.value = input.slice(0, 6);
+    }
+  }
   log() {
     const { phoneNumber, passwords, type } = this.user;
 

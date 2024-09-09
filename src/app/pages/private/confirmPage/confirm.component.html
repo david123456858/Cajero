@@ -1,0 +1,33 @@
+<div class="modal-overlay" *ngIf="isModalOpen">
+  <div class="modal-content">
+    <h2 class="text-[#5e2a92] text-lg font-bold mb-4">Confirmar Código</h2>
+
+    <!-- Condición para mostrar el temporizador o el código estático -->
+    <div *ngIf="accountType === 'NEQUI'; else staticCode">
+      <!-- Temporizador -->
+      <div class="timer">
+        Tiempo restante: {{ remainingTime }} segundos
+      </div>
+    </div>
+
+    <!-- Código estático si la cuenta no es 'Nequi' -->
+    <ng-template #staticCode>
+      
+    </ng-template>
+
+    <!-- Input para ingresar el código -->
+    <input 
+      type="number"
+      inputmode="numeric" 
+      placeholder="Ingrese su código" 
+      class="input-code"
+      [(ngModel)]="enteredCode"
+    />
+
+    <!-- Botón de Confirmación -->
+    <button class="confirm-button" (click)="verifyCode()">Confirmar</button>
+
+    
+  </div>
+</div>
+<app-invoice-page *ngIf="isInvoiceVisible" class="z-100"/>
