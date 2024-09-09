@@ -8,6 +8,7 @@
 
     <input
       [(ngModel)]="user.phoneNumber"
+      (input)="validateNumberInput($event)"
       id="user"
       name="user"
       type="number"
@@ -18,6 +19,7 @@
 
     <input
      [(ngModel)]="user.passwords"
+     (input)="validatePassInput($event)"
       id="password"
       name="password"
       type="password"

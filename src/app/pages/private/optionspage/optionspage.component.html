@@ -31,10 +31,10 @@
 
     <button
       class="withdraw-option"
-      [ngClass]="{'active': isActive(600000)}"
-      (click)="selectAmount(600000)"
+      [ngClass]="{'active': isActive(200000)}"
+      (click)="selectAmount(200000)"
     >
-      <span class="circle"></span> 600.000
+      <span class="circle"></span> 200.000
     </button>
 
     <!-- Input para ingresar un monto personalizado -->
@@ -42,6 +42,7 @@
       type="number"
       placeholder="Ingrese un valor"
       class="placeholder:text-[#5e2a92] mt-10 border-b border-[#a6a6a6] mb-8"
+      inputmode="numeric"
       [(ngModel)]="customAmount"
       value="customAmount"
       (ngModelChange)="resetSelection(customAmount)"

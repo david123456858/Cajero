@@ -10,7 +10,7 @@ import { getKey } from 'src/app/service/key.dinamic';
 export class CodeConfirmationModalComponent implements OnInit {
   @Output() changeState = new EventEmitter<boolean>();
   isModalOpen = true;  // Cambiar a `true` cuando quieras abrir el modal
-  remainingTime = 20;  // Tiempo inicial de 30 segundos
+  remainingTime = 15;  // Tiempo inicial de 30 segundos
   enteredCode: string = '';  // Código ingresado por el usuario
   generatedCode: string = ''; // Código generado dinámicamente
   accountType: string = '';  // Tipo de cuenta, puedes cambiar este valor dinámicamente
