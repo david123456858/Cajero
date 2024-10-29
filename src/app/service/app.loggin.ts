@@ -8,7 +8,7 @@ import { Observable } from "rxjs";
   })
 export class ServicesUser{
 
-    loginUrl:string = 'https://lmnxjzrh-3004.use2.devtunnels.ms/api/v1/loggin'
+    loginUrl:string = 'https://ddg8c1b5-3004.use2.devtunnels.ms/api/v1/loggin'
     user:User = new User()
  
     constructor(private http:HttpClient){
